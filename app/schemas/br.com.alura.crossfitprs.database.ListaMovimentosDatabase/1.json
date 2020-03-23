@@ -1,0 +1,71 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "f859c8e9e664c599969202e8f6ac7953",
+    "entities": [
+      {
+        "tableName": "Movimento",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nome` TEXT NOT NULL, `idMovimento` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idMovimento",
+            "columnName": "idMovimento",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idMovimento"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "ValorPr",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idValorPr` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `idMovimentoPai` INTEGER NOT NULL, `valorPr` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idValorPr",
+            "columnName": "idValorPr",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idMovimentoPai",
+            "columnName": "idMovimentoPai",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "valorPr",
+            "columnName": "valorPr",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idValorPr"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"f859c8e9e664c599969202e8f6ac7953\")"
+    ]
+  }
+}

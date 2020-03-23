@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Crossfit PRS</string>
+    <string name="title_activity_lista_movimentos">ListaMovimentos</string>
+
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_primeira">PrimeiraActivity</string>
+</resources>
